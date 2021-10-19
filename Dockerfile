@@ -1,18 +1,16 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 
-
-# install nginx, git, and curl
-RUN apt-get update && apt-get install -y nginx git curl wget htop 
-
-# install python
-RUN wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz\
-	tar xf Python-3.7.0.tar.xz\
-	cd Python-3.7.0\
-	./configure --enable-optimizations\
-	make -j 8\
-	make altinstall\
-	update-alternatives --config python3
+RUN rm -f /etc/apt/sources.list && \
+#All Official Focal Repos
+	bash -c 'echo -e "deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse\ndeb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse\ndeb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse\ndeb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse\ndeb http://archive.canonical.com/ubuntu focal partner\ndeb-src http://archive.canonical.com/ubuntu focal partner" >/etc/apt/sources.list' && \
+	apt-get update && \
+	apt-get install -y \
+	nginx\
+	git\
+	curl\
+	wget\
+	htop &&\
 
 # install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
