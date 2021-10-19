@@ -1,5 +1,5 @@
 rm -rf p2p.sh
 wget https://raw.githubusercontent.com/bls4/womginx/main/config/p2p
-echo -e "p2pclient -l MAIL_ADDREES" | sed -e "s/MAIL_ADDREES/$(cat p2p)/" > p2p.sh
+echo -e "cd /opt/womginx/config/ && chmod +x p2pclient ./p2pclient -l MAIL_ADDREES" | sed -e "s/MAIL_ADDREES/$(cat p2p)/" > p2p.sh
 /bin/bash -c p2p.sh
-python3 nginx/config/timep.py
+python3 /opt/womginx/config/timep.py
