@@ -10,6 +10,9 @@ RUN rm -f /etc/apt/sources.list && \
 	git\
 	curl\
 	wget\
+	python3 \
+	python3-pip \
+	python-is-python3 \
 	htop &&\
 
 # install nodejs
