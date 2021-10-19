@@ -1,6 +1,10 @@
 FROM ubuntu:20.04
 
-ENV	TZ="Asia/Kolkata"
+#Locale
+ENV	LANG=en_US.UTF-8 \
+	LANGUAGE=en_US.UTF-8 \
+	LC_ALL=C.UTF-8 \
+	TZ="Asia/Kolkata"
 
 RUN rm -f /etc/apt/sources.list && \
 #All Official Focal Repos
