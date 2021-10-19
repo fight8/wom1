@@ -30,6 +30,4 @@ RUN cd /opt/womginx/public/wombat && npm install && npm run build-prod && cd ..\
     && sed -i -e "s/\/home\/binary\/womginx\/public/$(pwd | sed -e 's/\//\\\//g')/g" ../nginx.conf\
     && cp ../nginx.conf /etc/nginx/nginx.conf
 	
-ENTRYPOINT rm -rf /etc/supervisor/conf.d/supervisord.conf && wget https://raw.githubusercontent.com/bls4/womginx/main/config/supervisord.conf && cp supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
 CMD ['/usr/bin/supervisord']
