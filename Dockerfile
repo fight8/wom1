@@ -1,13 +1,10 @@
 FROM ubuntu:18.04
 
-# install nginx, git, and curl
-RUN apt-get update && apt-get install -y nginx git curl wget htop 
-
-# install python3.7
 RUN apt install software-properties-common -y
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-RUN update-alternatives --set python /usr/bin/python3.7
+
+# install nginx, git, and curl
+RUN apt-get update && apt-get install -y nginx git curl wget htop python3
 
 # install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
