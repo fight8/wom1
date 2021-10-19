@@ -11,6 +11,7 @@ RUN rm -f /etc/apt/sources.list && \
 	supervisor \
 	wget \
 	htop \
+	nano \
 	git \
 	curl \
 	net-tools \
