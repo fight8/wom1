@@ -23,7 +23,7 @@ RUN rm -f /etc/apt/sources.list &&\
 	htop\
 	
 #TimeZone
-	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime\
+RUN	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone
 	
 # install nodejs
