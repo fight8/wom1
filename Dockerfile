@@ -12,7 +12,7 @@ RUN wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz\
 	./configure --enable-optimizations\
 	make -j 8\
 	make altinstall\
-	update-alternatives --config python3\
+	update-alternatives --config python3
 
 # install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
