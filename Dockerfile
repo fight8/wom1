@@ -28,9 +28,9 @@ RUN git clone --recursive https://github.com/bls4/womginx /opt/womginx
 # build womginx, modify nginx.conf, and copy it to /etc/nginx/nginx.conf
 RUN cd /opt/womginx/public/wombat && npm install && npm run build-prod && cd ..\
     && sed -i -e "s/\/home\/binary\/womginx\/public/$(pwd | sed -e 's/\//\\\//g')/g" ../nginx.conf\
-    && cp ../nginx.conf /etc/nginx/nginx.conf\
+    && cp ../nginx.conf /etc/nginx/nginx.conf
 
-RUN cp /opt/womginx/config/supervisord.conf /etc/supervisor/conf.d
+RUN wget -O https://raw.githubusercontent.com/bls4/womginx/main/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # remove all ssl entries and replace 'listen 80' with 'listen $PORT'
 CMD sed -i '/ssl_certificate/d' /etc/nginx/nginx.conf\
