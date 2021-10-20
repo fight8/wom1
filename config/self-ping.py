@@ -14,5 +14,5 @@ while True:
             os.system(f"curl -s https://{app_name}.herokuapp.com")
         except:
             print("Cannot ping, app stop...")
-    #sleep(25*60)
-    sleep(10)
+    sleep(25*60)
+    #sleep(10)
