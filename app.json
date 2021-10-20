@@ -3,9 +3,6 @@
     "description": "Fastest proxy using only nginx as the backend server",
     "repository": "https://github.com/bls4/womginx",
     "logo": "https://raw.githubusercontent.com/binary-person/womginx/master/public/logo.png",
-    "keywords": [
-        "nginx",
-        "docker"
-    ],
+    "keywords": ["nginx"],
     "stack": "container"
 }
