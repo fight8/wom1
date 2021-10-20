@@ -4,5 +4,12 @@
     "repository": "https://github.com/bls4/womginx",
     "logo": "https://raw.githubusercontent.com/binary-person/womginx/master/public/logo.png",
     "keywords": ["nginx"],
-    "stack": "container"
+    "stack": "container",
+	"env": {
+      "APP_NAME" : {
+        "description": "Name of the app.",
+                "value" : "",
+        "required" : true
+        }	
+    } 
 }
