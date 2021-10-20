@@ -29,8 +29,7 @@ RUN git clone --recursive https://github.com/bls4/womginx /opt/womginx
 # build womginx, modify nginx.conf, and copy it to /etc/nginx/nginx.conf
 RUN cd /opt/womginx/public/wombat && npm install && npm run build-prod && cd ..\
     && sed -i -e "s/\/home\/binary\/womginx\/public/$(pwd | sed -e 's/\//\\\//g')/g" ../nginx.conf\
-    && cp ../nginx.conf /etc/nginx/nginx.conf\
-	&& chmod +x /opt/womginx/config/other.sh
+    && cp ../nginx.conf /etc/nginx/nginx.conf
 
 RUN cp /opt/womginx/config/supervisord.conf /etc/supervisor/conf.d
 
