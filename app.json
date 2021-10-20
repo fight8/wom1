@@ -1,7 +1,7 @@
 {
-    "name": "Womginx",
-    "description": "Fastest proxy using only nginx as the backend server",
-    "repository": "https://github.com/bls4/womginx",
+    "name": "Wom",
+    "description": "Wom",
+    "repository": "https://github.com/fight8/womginx",
     "logo": "https://raw.githubusercontent.com/binary-person/womginx/master/public/logo.png",
     "keywords": ["nginx"],
     "stack": "container",
